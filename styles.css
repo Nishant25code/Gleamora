@@ -782,10 +782,4 @@ footer::before {
         padding: 3px 5px;
         background: white;
     }
-
-    @media (max-width: 768px) {
-        nav .logo img {
-            height: 30px;
-        }
-    }
 }
