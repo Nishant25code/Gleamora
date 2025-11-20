@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Gleamora</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="assets/logo/Gemini_Generated_Image_19eorg19eorg19eo.png">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo/Gemini_Generated_Image_19eorg19eorg19eo.png" alt="Gleamora Logo">
+            </a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="cart.html" class="active">Cart</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="section-title">Checkout</h2>
+        
+        <div class="checkout-container">
+            <form>
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Shipping Address *</label>
+                    <textarea id="address" name="address" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City *</label>
+                    <input type="text" id="city" name="city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pincode">PIN Code *</label>
+                    <input type="text" id="pincode" name="pincode" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Payment Method *</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="payment" value="cod" checked>
+                            Cash on Delivery
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="card">
+                            Credit/Debit Card
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="upi">
+                            UPI
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <h3>Order Summary</h3>
+                    <p>Subtotal: ₹3,696</p>
+                    <p>Shipping: ₹100</p>
+                    <p><strong>Total: ₹3,796</strong></p>
+                </div>
+                
+                <button type="submit" class="btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Gleamora</h3>
+                <p>Gleamora brings you curated beauty essentials that enhance your natural glow. Every product tells a story of elegance and care.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: hello@gleamora.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Address: Delhi, India</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#">F</a>
+                    <a href="#">T</a>
+                    <a href="#">I</a>
+                    <a href="#">Y</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gleamora. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
