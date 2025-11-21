@@ -69,6 +69,7 @@ nav .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 nav .logo {
@@ -759,27 +760,84 @@ footer::before {
     color: #ccc;
 }
 
+/* Hamburger toggle button */
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle i { pointer-events: none; }
+
+.menu-toggle:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-1px);
+}
+
 @media (max-width: 768px) {
+    /* Navbar - mobile */
+    .menu-toggle { display: inline-flex; }
+
     nav ul {
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    
-    .product-detail {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 1rem;
+        left: 1rem;
+        background: linear-gradient(135deg, #c08080 0%, #a86f6f 100%);
+        border-radius: 12px;
+        padding: 1rem;
+        margin: 0;
+        display: none;
         flex-direction: column;
-    }
-    
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.5rem;
+        box-shadow: 0 12px 24px rgba(192, 128, 128, 0.35);
+        z-index: 200;
     }
 
-    nav .logo img {
-        height: 44px;
-        padding: 3px 5px;
-        background: white;
+    nav .nav-container.open ul { display: flex; }
+
+    nav ul li a { padding: 0.75rem 0.5rem; }
+
+    /* Existing tweaks */
+    .product-detail { flex-direction: column; }
+    .hero h1 { font-size: 1.8rem; }
+    .products-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    nav .logo img { height: 44px; padding: 3px 5px; background: white; }
+    .hero-image img { height: 260px; }
+    .contact-container { flex-direction: column; }
+
+    /* Cart table - mobile stacked cards */
+    .cart-table thead { display: none; }
+    .cart-table, .cart-table tbody, .cart-table tr, .cart-table td { display: block; width: 100%; }
+    .cart-table tr {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
+    .cart-table td {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+        border-bottom: none;
+    }
+    .cart-table td:nth-child(1) { justify-content: flex-start; gap: 1rem; }
+    .cart-table td:nth-child(1) img { width: 90px; height: 90px; }
+    .cart-table td:nth-child(1)::before { content: "Product"; font-weight: 600; color: #333; margin-right: 0.5rem; }
+    .cart-table td:nth-child(2)::before { content: "Name"; font-weight: 600; color: #333; }
+    .cart-table td:nth-child(3)::before { content: "Price"; font-weight: 600; color: #333; }
+    .cart-table td:nth-child(4)::before { content: "Quantity"; font-weight: 600; color: #333; }
+    .cart-table td:nth-child(5)::before { content: "Total"; font-weight: 600; color: #333; }
+    .cart-total { text-align: left; font-size: 1.25rem; }
+    .cart-actions { display: flex; flex-direction: column; gap: 0.75rem; text-align: center; }
 }
