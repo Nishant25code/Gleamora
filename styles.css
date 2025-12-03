@@ -67,8 +67,8 @@ nav .nav-container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
     position: relative;
 }
 
@@ -99,6 +99,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 2rem;
+    flex: 1;
 }
 
 nav ul li a {
@@ -108,6 +109,54 @@ nav ul li a {
     position: relative;
     transition: all 0.3s ease;
     padding: 0.5rem 0;
+}
+
+.nav-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-icon {
+    position: relative;
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.3);
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.15);
+    transition: transform 0.2s ease;
+}
+
+.nav-icon:hover {
+    transform: translateY(-2px);
+}
+
+.nav-icon img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.cart-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff8aa1;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.25rem;
+    border: 2px solid #a86f6f;
 }
 
 nav ul li a::after {
@@ -287,6 +336,17 @@ nav ul li a[aria-current="page"]::after {
     margin-bottom: 0.5rem;
 }
 
+.product-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.product-card-actions .btn {
+    flex: 1;
+    text-align: center;
+}
+
 .product-price {
     font-size: 1.3rem;
     font-weight: bold;
@@ -439,6 +499,40 @@ nav ul li a[aria-current="page"]::after {
     height: 80px;
     object-fit: cover;
     border-radius: 5px;
+}
+
+.qty-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1px solid #eee;
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    background: #fafafa;
+}
+
+.qty-control button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #c08080;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.qty-control button:hover {
+    opacity: 0.85;
+}
+
+.qty-control span {
+    min-width: 24px;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
 }
 
 .cart-total {

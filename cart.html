@@ -21,9 +21,10 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="categories.html">Categories</a></li>
-                <li><a href="cart.html" class="active" aria-current="page">Cart</a></li>
+                <li><a href="cart.html" class="active" aria-current="page">Cart <span class="cart-count" data-cart-count>0</span></a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </div>
     </nav>
@@ -42,35 +43,17 @@
                         <th>Total</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody data-cart-body>
                     <tr>
-                        <td><img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=100&h=100&fit=crop" alt="Face Cream" loading="lazy" decoding="async"></td>
-                        <td>Hydrating Face Cream</td>
-                        <td>₹899</td>
-                        <td>2</td>
-                        <td>₹1,798</td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=100&h=100&fit=crop" alt="Lipstick" loading="lazy" decoding="async"></td>
-                        <td>Matte Lipstick</td>
-                        <td>₹599</td>
-                        <td>1</td>
-                        <td>₹599</td>
-                    </tr>
-                    <tr>
-                        <td><img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=100&h=100&fit=crop" alt="Serum" loading="lazy" decoding="async"></td>
-                        <td>Vitamin C Serum</td>
-                        <td>₹1,299</td>
-                        <td>1</td>
-                        <td>₹1,299</td>
+                        <td colspan="5">Loading cart...</td>
                     </tr>
                 </tbody>
             </table>
             
             <div class="cart-total">
-                <p>Subtotal: <span>₹3,696</span></p>
-                <p>Shipping: <span>₹100</span></p>
-                <p>Total: <span>₹3,796</span></p>
+                <p>Subtotal: <span data-cart-subtotal>₹0</span></p>
+                <p>Shipping: <span data-cart-shipping>₹0</span></p>
+                <p>Total: <span data-cart-total>₹0</span></p>
             </div>
             
             <div class="cart-actions">
@@ -113,5 +96,6 @@
             <p>&copy; 2024 Gleamora. All rights reserved. | Made by Nishant Jain</p>
         </div>
     </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
