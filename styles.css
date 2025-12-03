@@ -128,7 +128,7 @@ nav ul li a {
     align-items: center;
     justify-content: center;
     background: rgba(255,255,255,0.15);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
 
 .nav-icon:hover {
@@ -136,9 +136,14 @@ nav ul li a {
 }
 
 .nav-icon img {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
     object-fit: contain;
+}
+
+.nav-icon[aria-current="page"] {
+    background: rgba(255,255,255,0.35);
+    border-color: #fff;
 }
 
 .cart-count {
