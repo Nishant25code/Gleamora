@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Gleamora</title>
+    <title>Login - Gleamora</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/logo/Gemini_Generated_Image_19eorg19eorg19eo.png">
@@ -21,16 +21,16 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="categories.html">Categories</a></li>
-                <li><a href="cart.html" class="active" aria-current="page">Cart</a></li>
+                <li><a href="cart.html">Cart</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="nav-actions">
-                <a href="cart.html" class="nav-icon" aria-label="Open cart" aria-current="page">
+                <a href="cart.html" class="nav-icon" aria-label="Open cart">
                     <img src="https://cdn-icons-png.flaticon.com/512/1170/1170627.png" alt="Cart">
                     <span class="cart-count" data-cart-count>0</span>
                 </a>
-                <a href="login.html" class="nav-icon nav-icon-profile" aria-label="Login">
+                <a href="login.html" class="nav-icon nav-icon-profile" aria-label="Login" aria-current="page">
                     <img src="https://cdn-icons-png.flaticon.com/512/552/552721.png" alt="Account">
                 </a>
             </div>
@@ -38,66 +38,24 @@
     </nav>
 
     <div class="container">
-        <h2 class="section-title">Checkout</h2>
-        
-        <div class="checkout-container">
+        <h2 class="section-title">Welcome Back</h2>
+        <div class="checkout-container" style="max-width: 420px;">
             <form>
                 <div class="form-group">
-                    <label for="name">Full Name *</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="login-email">Email Address *</label>
+                    <input type="email" id="login-email" name="email" placeholder="you@example.com" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="email">Email Address *</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="login-password">Password *</label>
+                    <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
                 </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number *</label>
-                    <input type="tel" id="phone" name="phone" required>
+                <div class="form-group" style="display: flex; align-items: center; justify-content: space-between;">
+                    <label style="display: flex; align-items: center; gap: 0.4rem; font-weight: 500;">
+                        <input type="checkbox" style="width: auto;"> Remember me
+                    </label>
+                    <a href="#" style="color: #a86f6f; font-weight: 600; text-decoration: none;">Forgot password?</a>
                 </div>
-                
-                <div class="form-group">
-                    <label for="address">Shipping Address *</label>
-                    <textarea id="address" name="address" rows="3" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="city">City *</label>
-                    <input type="text" id="city" name="city" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="pincode">PIN Code *</label>
-                    <input type="text" id="pincode" name="pincode" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Payment Method *</label>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="payment" value="cod" checked>
-                            Cash on Delivery
-                        </label>
-                        <label>
-                            <input type="radio" name="payment" value="card">
-                            Credit/Debit Card
-                        </label>
-                        <label>
-                            <input type="radio" name="payment" value="upi">
-                            UPI
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <h3>Order Summary</h3>
-                    <p>Subtotal: ₹3,696</p>
-                    <p>Shipping: ₹100</p>
-                    <p><strong>Total: ₹3,796</strong></p>
-                </div>
-                
-                <button type="submit" class="btn">Place Order</button>
+                <button type="submit" class="btn" style="width: 100%;">Login</button>
             </form>
         </div>
     </div>
@@ -135,5 +93,7 @@
             <p>&copy; 2025 Gleamora. All rights reserved. | Made by Nishant Jain</p>
         </div>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

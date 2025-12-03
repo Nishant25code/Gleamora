@@ -108,18 +108,74 @@ const renderCartPage = () => {
 const initMenuToggle = () => {
     const toggle = document.querySelector('.menu-toggle');
     const navContainer = document.querySelector('.nav-container');
-    if (!toggle || !navContainer) {
+    const menu = navContainer?.querySelector('ul');
+    if (!toggle || !navContainer || !menu) {
         return;
     }
-    toggle.addEventListener('click', () => {
-        const isOpen = navContainer.classList.toggle('open');
+
+    if (!menu.id) {
+        menu.id = 'primary-navigation';
+    }
+    toggle.setAttribute('aria-controls', menu.id);
+    toggle.setAttribute('aria-haspopup', 'true');
+
+    const updateToggleState = (isOpen) => {
         toggle.setAttribute('aria-expanded', String(isOpen));
+        toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        document.body.classList.toggle('nav-menu-open', isOpen);
+    };
+
+    const closeMenu = () => {
+        if (!navContainer.classList.contains('open')) {
+            return;
+        }
+        navContainer.classList.remove('open');
+        updateToggleState(false);
+    };
+
+    const openMenu = () => {
+        if (navContainer.classList.contains('open')) {
+            return;
+        }
+        navContainer.classList.add('open');
+        updateToggleState(true);
+    };
+
+    toggle.addEventListener('click', () => {
+        const isOpen = navContainer.classList.contains('open');
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
     });
+
     navContainer.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
-            navContainer.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
+            closeMenu();
         });
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!navContainer.classList.contains('open')) {
+            return;
+        }
+        if (!navContainer.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            closeMenu();
+            toggle.focus();
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
     });
 };
 
