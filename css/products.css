@@ -1,0 +1,102 @@
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.products-grid .product-card {
+    animation: fadeInUp 0.6s ease-out both;
+}
+
+.products-grid .product-card:nth-child(1) { animation-delay: 0.1s; }
+.products-grid .product-card:nth-child(2) { animation-delay: 0.2s; }
+.products-grid .product-card:nth-child(3) { animation-delay: 0.3s; }
+.products-grid .product-card:nth-child(4) { animation-delay: 0.4s; }
+.products-grid .product-card:nth-child(5) { animation-delay: 0.5s; }
+.products-grid .product-card:nth-child(6) { animation-delay: 0.6s; }
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(192, 128, 128, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(192, 128, 128, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(192, 128, 128, 0.3);
+}
+
+.product-card:hover::before {
+    opacity: 1;
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-card-content {
+    padding: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.product-card p {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.product-card-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.product-card-actions .btn {
+    flex: 1;
+    text-align: center;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #a86f6f;
+    margin: 0.5rem 0;
+    position: relative;
+    display: inline-block;
+}
+
+.product-price::before {
+    content: '✦';
+    margin-right: 0.3rem;
+    color: #d4a5a5;
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}

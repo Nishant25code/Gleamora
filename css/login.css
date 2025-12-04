@@ -1,0 +1,36 @@
+.login-form {
+    max-width: 420px;
+    margin: 2rem auto;
+}
+
+.login-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.login-form button {
+    width: 100%;
+}
+
+.login-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.login-remember {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+}
+
+.login-forgot {
+    color: #a86f6f;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-forgot:hover {
+    opacity: 0.85;
+}
