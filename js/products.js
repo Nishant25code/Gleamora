@@ -1,7 +1,6 @@
-(() => {
-    document.addEventListener('DOMContentLoaded', () => {
-        const { initBasePage, initAddToCart } = window.Gleamora || {};
-        initBasePage?.();
-        initAddToCart?.();
-    });
-})();
+document.addEventListener('DOMContentLoaded', function () {
+    var app = window.Gleamora;
+    if (app && typeof app.initBasePage === 'function') {
+        app.initBasePage();
+    }
+});

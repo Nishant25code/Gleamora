@@ -1,6 +1,6 @@
-(() => {
-    document.addEventListener('DOMContentLoaded', () => {
-        const { initBasePage } = window.Gleamora || {};
-        initBasePage?.();
-    });
-})();
+document.addEventListener('DOMContentLoaded', function () {
+    var app = window.Gleamora;
+    if (app && typeof app.initBasePage === 'function') {
+        app.initBasePage();
+    }
+});
